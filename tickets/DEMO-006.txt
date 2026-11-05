@@ -1,0 +1,23 @@
+============================================================
+ TICKET: DEMO-006
+============================================================
+Beérkezés : 2026-09-14 11:40
+Csatorna  : telefon
+Bejelentő : Példa Petra (Példa Kft. SAP üzemeltetés)
+Kategória : SAP / Oracle
+Érintett  : SAP, DB01
+Prioritás : Kritikus
+Állapot   : Új
+Tárgy     : Az SAP napi batch zárolt tábla miatt elakadt
+
+Leírás:
+Az SAP napi batch a SM37 szerint "running" állapotban van, de egy
+zárolt tábla miatt nem halad tovább. A DB01 Oracle szerveren az alert
+logban tablespace-figyelmeztetés látható; a tablespace 95%-on áll.
+
+Elvárt eredmény:
+- A zárolás feloldása, a batch újraindítása
+- A tablespace bővítése, a gyökér-ok elemzése
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

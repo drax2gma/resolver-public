@@ -1,0 +1,25 @@
+============================================================
+ TICKET: DEMO-010
+============================================================
+Beérkezés : 2026-09-15 11:10
+Csatorna  : telefon
+Bejelentő : Példa Pál (Példa Kft. ügyfélszolgálat)
+Kategória : SSO / identitás
+Érintett  : SSO01, partner portál
+Prioritás : Magas
+Állapot   : Új
+Tárgy     : Az SSO bejelentkezési hurokba kerül, az OTP-t nem kéri a rendszer
+
+Leírás:
+Az SSO01 szolgáltatásnál a felhasználók egy része bejelentkezéskor
+végtelen átirányítási hurokba kerül. A session cookie domain-beállítása
+a közelmúltban változott; az OTP-t a rendszer a hurok miatt nem kéri.
+Az érintett fiókok száma körülbelül 20.
+
+Elvárt eredmény:
+- A session cookie és az átirányítási lánc ellenőrzése
+- Az OTP-kérések helyreállítása
+- Az érintett fiókok listája
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

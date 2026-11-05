@@ -1,0 +1,24 @@
+============================================================
+ TICKET: DEMO-003
+============================================================
+Beérkezés : 2026-09-14 09:05
+Csatorna  : e-mail
+Bejelentő : Teszt Tamás (Példa Kft. virtualizációs csoport)
+Kategória : Virtualizáció / tároló
+Érintett  : VM01, DATASTORE01
+Prioritás : Magas
+Állapot   : Új
+Tárgy     : A VM01 lemezbővítése elakadt, a datastore megtelt
+
+Leírás:
+A VM01 virtuális gép adatlemezét 200 GB-tal bővíteni kellene, de a
+DATASTORE01 datastore szabad kapacitása 4% alá csökkent. Egy korábbi
+snapshot törlése nem szabadított fel helyet, mert a konszolidáció
+félbeszakadt. Új snapshot létrehozása jelenleg nem lehetséges.
+
+Elvárt eredmény:
+- A snapshot konszolidálása, a hely felszabadítása
+- A lemezbővítés végrehajtása
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

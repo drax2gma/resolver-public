@@ -1,0 +1,30 @@
+# Mint systemd unit az ollama számára. CPU-s példa; GPU/VRAM beállításokhoz
+# igazítsd az OLLAMA_* változókat.
+[Unit]
+Description=Ollama inference server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ollama
+Group=ollama
+ExecStart=/usr/local/bin/ollama serve
+Environment=OLLAMA_HOST=127.0.0.1:11434
+Environment=OLLAMA_MODELS=/var/lib/ollama/models
+Environment=OLLAMA_KEEP_ALIVE=30m
+Environment=OLLAMA_NUM_PARALLEL=1
+Environment=OLLAMA_MAX_LOADED_MODELS=1
+# CPU-only tuning (opcionális):
+# Environment=OLLAMA_NUM_THREAD=4
+# Environment=OLLAMA_VULKAN=0
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/ollama
+
+[Install]
+WantedBy=multi-user.target

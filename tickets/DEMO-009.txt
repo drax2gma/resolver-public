@@ -1,0 +1,24 @@
+============================================================
+ TICKET: DEMO-009
+============================================================
+Beérkezés : 2026-09-15 10:05
+Csatorna  : e-mail
+Bejelentő : Minta Nóra (Példa Kft. Linux üzemeltetés)
+Kategória : Linux / monitoring
+Érintett  : LINUX01, központi monitoring
+Prioritás : Közepes
+Állapot   : Új
+Tárgy     : Linux szerveren a /var megtelt, a monitoring agent nem küld riasztást
+
+Leírás:
+A LINUX01 szerveren a /var partíció 98%-on áll, mert a logrotáció egy
+hibás konfiguráció miatt nem törölte a régi logokat. A monitoring agent
+nem tud riasztást küldeni, mert a helyi spool könyvtárba sem tud írni.
+
+Elvárt eredmény:
+- A logrotáció javítása, a /var megtisztítása
+- A monitoring agent újraindítása, tesztriasztás
+- A lemezhasználat monitorozása
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

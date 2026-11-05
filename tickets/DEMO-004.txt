@@ -1,0 +1,23 @@
+============================================================
+ TICKET: DEMO-004
+============================================================
+Beérkezés : 2026-09-14 10:20
+Csatorna  : monitoring
+Bejelentő : Demo Dóra (Példa Kft. backup üzemeltetés)
+Kategória : Mentés / backup
+Érintett  : BACKUP01, heti mentési pool
+Prioritás : Magas
+Állapot   : Új
+Tárgy     : A heti teljes mentés a pool telítettsége miatt nem indult el
+
+Leírás:
+A BACKUP01 szerveren a heti teljes mentés nem indult el, mert a
+"WEEKLY" szalagos pool elérte a retention limitet, és a régi szalagok
+felülírása nem indult el. A napi inkrementális mentések rendben vannak.
+
+Elvárt eredmény:
+- A szalagok retention szerinti felülírása vagy új média biztosítása
+- A heti mentés pótlása, a mentési napló ellenőrzése
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

@@ -1,0 +1,24 @@
+============================================================
+ TICKET: DEMO-005
+============================================================
+Beérkezés : 2026-09-14 11:00
+Csatorna  : e-mail
+Bejelentő : Minta Miklós (Példa Kft. alkalmazásüzemeltetés)
+Kategória : SQL / DBA
+Érintett  : SQL01
+Prioritás : Közepes
+Állapot   : Új
+Tárgy     : SQL tesztadatbázis visszaállítása a megtelt tranzakciós log miatt elakadt
+
+Leírás:
+A SQL01 szerveren a TESZTDB adatbázis visszaállítása elakadt, mert a
+tranzakciós log elérte a maximális méretet, és a lemez 92%-on áll.
+A visszaállítási műveletet meg kell szakítani, majd a logot biztonságosan
+kezelni kell.
+
+Elvárt eredmény:
+- A visszaállítás újrapróbálása megfelelő logbeállításokkal
+- A lemezhasználat okának feltárása, javaslat a bővítésre
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

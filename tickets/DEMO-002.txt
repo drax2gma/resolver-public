@@ -1,0 +1,24 @@
+============================================================
+ TICKET: DEMO-002
+============================================================
+Beérkezés : 2026-09-14 08:10
+Csatorna  : önkiszolgáló portál
+Bejelentő : Példa Péter (Példa Kft. HR)
+Kategória : Active Directory / jogosultság
+Érintett  : AD, FILE01 (közös meghajtó), HR csoport
+Prioritás : Közepes
+Állapot   : Új
+Tárgy     : Áthelyezett munkatárs nem éri el az új részleg közös meghajtóját
+
+Leírás:
+A munkatárs a minap a HR részlegből a pénzügyi részlegbe került. Az új
+szerepkörének megfelelő Active Directory csoporttagság nem jelent meg,
+ezért a \\FILE01\PENZUGY$ megosztásra "A hálózati elérés megtagadva"
+hibát kap. A régi HR-csoporttagság még aktív.
+
+Elvárt eredmény:
+- A régi csoporttagság eltávolítása, az új csoport hozzáadása
+- A megosztás elérésének ellenőrzése
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

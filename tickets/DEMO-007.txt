@@ -1,0 +1,24 @@
+============================================================
+ TICKET: DEMO-007
+============================================================
+Beérkezés : 2026-09-14 12:15
+Csatorna  : önkiszolgáló portál
+Bejelentő : Teszt Tibor (Példa Kft. partner támogatás)
+Kategória : Dokumentumkezelés / partner portál
+Érintett  : PORTAL01, dokumentumtár
+Prioritás : Közepes
+Állapot   : Új
+Tárgy     : A partner portálon a vendégfiókok MFA-regisztrációja sikertelen
+
+Leírás:
+A PORTAL01 partner portálon a meghívott külső partnerek egy része nem
+tudja befejezni az MFA-regisztrációt: az SSO átirányítás után visszakerül
+a bejelentkező oldalra. A belső felhasználók bejelentkezése rendben van,
+a dokumentumtár jogosultságai nem változtak.
+
+Elvárt eredmény:
+- Az MFA-regisztráció és az SSO átirányítás ellenőrzése
+- Az érintett partnerfiókok listája
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

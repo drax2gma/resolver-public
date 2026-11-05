@@ -1,0 +1,25 @@
+============================================================
+ TICKET: DEMO-008
+============================================================
+Beérkezés : 2026-09-15 09:20
+Csatorna  : monitoring
+Bejelentő : (automatikus) Hálózatfigyelő
+Kategória : Hálózat / VPN
+Érintett  : VPN01 (site-to-site tartalék kapcsolat)
+Prioritás : Magas
+Állapot   : Új
+Tárgy     : A VPN site-to-site alagút tanúsítványa 5 nap múlva lejár
+
+Leírás:
+A VPN01 tartalék site-to-site alagút kliens-tanúsítványa 2026-09-20-án
+lejár. A jelenlegi tanúsítvány 2025-09-21-én került kiállításra, a
+megújítás korábban manuálisan történt. Ha lejár, a tartalék kapcsolat
+nem épül fel.
+
+Elvárt eredmény:
+- Új tanúsítvány igénylése és telepítése
+- A VPN konfigurációjának mentése
+- Teszt-kapcsolat ellenőrzése a lejárat előtt
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

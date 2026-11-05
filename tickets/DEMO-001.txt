@@ -1,0 +1,25 @@
+============================================================
+ TICKET: DEMO-001
+============================================================
+Beérkezés : 2026-09-14 07:35
+Csatorna  : telefon
+Bejelentő : Minta Mária (Példa Kft. IT üzemeltetés)
+Kategória : Windows szerver / cluster
+Érintett  : WIN-CL01 (Windows Server 2022, fájlszerver cluster node)
+Prioritás : Magas
+Állapot   : Új
+Tárgy     : A WIN-CL01 cluster node karbantartás után nem csatlakozott vissza
+
+Leírás:
+A hétvégi karbantartás után a WIN-CL01 Windows Server node a clusterben
+"offline" állapotban maradt. A WIN-CL02 átvette a megosztott köteteket, a
+felhasználók elérik a fájlokat, de a backup agent és a monitoring
+agent nem látja a node-ot. A cluster logban quorum-hiba szerepel.
+
+Elvárt eredmény:
+- A node visszahozatala a clusterbe, a quorum ellenőrzése
+- A backup és monitoring agent újraindítása
+- Rövid jegyzet a kiváltó okról
+
+Megjegyzés: Szintetikus minta jegy, nem valós esemény.
+============================================================

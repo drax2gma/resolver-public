@@ -1,0 +1,26 @@
+# Mint systemd unit. A WorkingDirectory, EnvironmentFile, ReadWritePaths,
+# User/Group és ExecStart útvonalakat igazítsd a saját telepítésedhez.
+[Unit]
+Description=Resolver ticket routing
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=resolver
+Group=resolver
+WorkingDirectory=/opt/resolver
+EnvironmentFile=/etc/resolver/env
+Environment=HOST=127.0.0.1
+Environment=PORT=3000
+ExecStart=/usr/bin/node build
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/resolver
+
+[Install]
+WantedBy=multi-user.target

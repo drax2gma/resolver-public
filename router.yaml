@@ -1,0 +1,255 @@
+# Resolver router — egyetlen igazságforrás.
+# Mentéskor a teljes fájl validálódik (séma + hivatkozások).
+#
+# megoldok[].temakorok: a temakorok[].id értékei.
+# megoldok[].helyettes: opcionális, létező megoldó neve.
+# szabalyok[].kulcsszavak: ha a jegy szövegében szerepel, a szabály bekerül a promptba.
+
+szervezetek: [Windows, Virtualizáció, Storage, AD, Adatbázis, SAP, Backup, Dokumentumkezelés, Linux, Hálózat, Monitoring, Identitás, Telefónia, Architect, Team Lead, On-call, CMDB, Hardver]
+
+megoldok:
+  - nev: Kovács Anna
+    szerep: Windows Admin / Monitoring
+    szervezetek: [Windows, Monitoring]
+    temakorok: [windows_server, monitoring, backup, cluster, virtualizacio]
+
+  - nev: Nagy Péter
+    szerep: Storage / Virtualization Ops
+    szervezetek: [Virtualizáció, Storage]
+    temakorok: [storage, virtualizacio, backup, windows_server]
+    helyettes: Juhász András
+
+  - nev: Szabó Eszter
+    szerep: Windows Admin
+    szervezetek: [Windows]
+    temakorok: [windows_server, ad, monitoring, hardware]
+
+  - nev: Tóth Gábor
+    szerep: Backup / SQL Admin
+    szervezetek: [Backup, Adatbázis]
+    temakorok: [backup, sql_db, oracle_db, dokumentumkezeles]
+
+  - nev: Horváth Judit
+    szerep: Oracle DBA / SAP Basis
+    szervezetek: [Adatbázis, SAP]
+    temakorok: [oracle_db, sap, logisztika, extranet, cluster]
+    helyettes: Balogh Zoltán
+
+  - nev: Varga Tamás
+    szerep: AD Admin
+    szervezetek: [AD]
+    temakorok: [ad, network, mail, cloud, security]
+    helyettes: Papp Ilona
+
+  - nev: Molnár Kata
+    szerep: Dokumentumkezelés / Backup Admin
+    szervezetek: [Dokumentumkezelés, Backup]
+    temakorok: [dokumentumkezeles, backup, oracle_db]
+
+  - nev: Balogh Zoltán
+    szerep: Oracle DBA / SSO Admin
+    szervezetek: [Adatbázis, Identitás]
+    temakorok: [oracle_db, sso, extranet, logisztika, sap, security]
+    helyettes: Horváth Judit
+
+  - nev: Farkas Éva
+    szerep: SQL DBA
+    szervezetek: [Adatbázis]
+    temakorok: [sql_db, backup, monitoring]
+
+  - nev: Simon Dániel
+    szerep: Telefónia / Call center Ops
+    szervezetek: [Telefónia]
+    temakorok: [telefonia, backup, security]
+
+  - nev: Fekete László
+    szerep: Linux OS Admin
+    szervezetek: [Linux]
+    temakorok: [linux, monitoring, security]
+    helyettes: Váradi Bence
+
+  - nev: Katona Márta
+    szerep: OS Admin / Storage Hardware
+    szervezetek: [Windows, Hardver]
+    temakorok: [windows_server, storage, hardware]
+
+  - nev: Németh Bence
+    szerep: Dokumentumkezelés Admin
+    szervezetek: [Dokumentumkezelés]
+    temakorok: [dokumentumkezeles]
+
+  - nev: Papp Ilona
+    szerep: File Server / AD Admin
+    szervezetek: [AD]
+    temakorok: [ad, network, mail, storage, monitoring, cmdb, security]
+    helyettes: Varga Tamás
+
+  - nev: Juhász András
+    szerep: Virtualizáció Admin
+    szervezetek: [Virtualizáció]
+    temakorok: [virtualizacio, storage]
+    helyettes: Nagy Péter
+
+  - nev: Váradi Bence
+    szerep: Linux OS Admin
+    szervezetek: [Linux]
+    temakorok: [linux, monitoring]
+    helyettes: Fekete László
+
+  - nev: Deák Gábor
+    szerep: Architect
+    szervezetek: [Architect]
+    temakorok: [mail, architect]
+
+  - nev: Somogyi Anna
+    szerep: Monitoring / Dispatcher
+    szervezetek: [Monitoring]
+    temakorok: [monitoring, dispatch, cmdb]
+
+  - nev: Hegedűs Péter
+    szerep: Team Lead
+    szervezetek: [Team Lead]
+    temakorok: [dispatch, lead]
+
+  - nev: Szalai Judit
+    szerep: On-call
+    szervezetek: [On-call]
+    temakorok: [oncall, monitoring]
+
+  - nev: Fodor Máté
+    szerep: Network / VPN
+    szervezetek: [Hálózat]
+    temakorok: [network, security]
+
+  - nev: Bakos Emese
+    szerep: CMDB Admin
+    szervezetek: [CMDB]
+    temakorok: [cmdb]
+
+temakorok:
+  - id: windows_server
+    nev: Windows szerver
+    kulcsszavak: [windows, win srv, szerver ujraind, ujraindult, szolgaltatas nem indult, service, reboot, mecm, sccm, hyper-v, windows server, windows cluster, szerver letrehozas, szerver megszuntetes]
+
+  - id: ad
+    nev: Active Directory
+    kulcsszavak: [active directory, domain controller, dc, ou, csoporttagsag, fioktorles, fiokletrehozas, domain fiok, ad fiok, gpo, corp, internetjog]
+
+  - id: virtualizacio
+    nev: Virtualizáció
+    kulcsszavak: [virtualizacio, vm, snapshot, datastore, konszolid, vm placement, hypervisor]
+
+  - id: storage
+    nev: Tároló
+    kulcsszavak: [tarolo, diszk, kotet, fileszerver, fajlszerver, nas, san, lemez, datastore, pst, kvota]
+
+  - id: backup
+    nev: Mentés / backup
+    kulcsszavak: [mentes, backup, tape, pool, retention, visszaallitas, mentes nem fut, status 6]
+
+  - id: sql_db
+    nev: SQL adatbázis
+    kulcsszavak: [sql, dba, disk monitoring, tsql, availability group, service account, sysadmin, adatbazis masolas]
+
+  - id: oracle_db
+    nev: Oracle adatbázis
+    kulcsszavak: [oracle, tablespace, ora-, rac]
+
+  - id: sap
+    nev: SAP
+    kulcsszavak: [sap, sm37, basis]
+
+  - id: logisztika
+    nev: Logisztika
+    kulcsszavak: [logisztika, szallitas, kiszallitas, raktar, pda]
+
+  - id: extranet
+    nev: Extranet
+    kulcsszavak: [extranet]
+
+  - id: dokumentumkezeles
+    nev: Dokumentumkezelés
+    kulcsszavak: [dokumentumkezeles, partnerportal, dokumentumtar]
+
+  - id: sso
+    nev: SSO / Identitás
+    kulcsszavak: [sso, identitas, otp, sms, bejelentkezesi hurok]
+
+  - id: linux
+    nev: Linux
+    kulcsszavak: [linux, unix, sudo, sudoers, systemd]
+
+  - id: monitoring
+    nev: Monitoring
+    kulcsszavak: [monitoring, riasztas, alert, host-elerhetoseg, false positive]
+
+  - id: network
+    nev: Hálózat / VPN
+    kulcsszavak: [vpn, 4g, router, tanusitvany, cert, adatkapcsolat, telefonvonal, halozat]
+
+  - id: telefonia
+    nev: Telefónia / Call center
+    kulcsszavak: [telefonia, call center, ivr, ugyfelszolgalat]
+
+  - id: mail
+    nev: Levelezés
+    kulcsszavak: [smtp, mail, levelfeldolgozas, levelezes, levelezesi, telephely]
+
+  - id: hardware
+    nev: Hardver
+    kulcsszavak: [hardver, szerver hardver, diszk, eszkozleszereles, kliens telepites]
+
+  - id: cluster
+    nev: Cluster
+    kulcsszavak: [cluster, failover, quorum, group offline, partially online, node]
+
+  - id: cmdb
+    nev: CMDB
+    kulcsszavak: [cmdb, szerver-gazda, gazda nyilvantartas]
+
+  - id: dispatch
+    nev: Jegykiadás / dispatcher
+    kulcsszavak: [jegykiadas, routing, dispatcher, valaszsablon, riasztas-beerkeztetes]
+
+  - id: lead
+    nev: Team Lead
+    kulcsszavak: [team lead, tavollet, jelenlet, lead]
+
+  - id: oncall
+    nev: On-call
+    kulcsszavak: [keszenlet, on-call, ugyelet, riasztas-tovabbitas]
+
+  - id: architect
+    nev: Architect
+    kulcsszavak: [architect]
+
+  - id: cloud
+    nev: Felhő
+    kulcsszavak: [felho, cloud, key vault, kontener]
+
+  - id: security
+    nev: Biztonság / jelszó
+    kulcsszavak: [jelszo, password, reset, key vault, adatgazdai engedely]
+
+  - id: egyeb
+    nev: Egyéb
+    kulcsszavak: []
+
+szabalyok:
+  - szoveg: SQL jogosultsági jegyek a SQL DBA-hoz tartoznak (Farkas Éva), nem az Oracle csapathoz (Horváth Judit, Balogh Zoltán).
+    kulcsszavak: [sql, sql server, jogosultsag, olvasasi jog, sysadmin]
+
+  - szoveg: Felhasználói fiók létrehozása/törlése, OU/csoport/DC művelet → AD Admin (Varga Tamás, helyettese Papp Ilona), nem Windows Admin (Szabó Eszter).
+    kulcsszavak: [fiok, fioktorles, fiokletrehozas, ou, csoport, dc, active directory, kilepes]
+
+  - szoveg: SQL sysadmin / service account külön jegy a SQL DBA-nak (Farkas Éva); az AD fiók létrehozása nem tartalmaz SQL jogosultságot.
+    kulcsszavak: [sql, sysadmin, service account, sqlsa]
+
+  - szoveg: Windows failover cluster / backup agent / monitoring agent riasztás → Kovács Anna (Windows cluster) vagy Katona Márta (OS/storage).
+    kulcsszavak: [windows, cluster, quorum, backup agent, monitoring agent]
+
+  - szoveg: Kilépéses fióktörlésnél a HR kategóriát ellenőrizni kell; a törlés AD Admin feladat.
+    kulcsszavak: [kilepes, fioktorles, hr, adatgazdai]
+
+  - szoveg: A helyettes csak akkor kapja a jegyet, ha az elsődleges megoldó nem elérhető; a helyettes-lánc nem jelent automatikus megosztást.
+    kulcsszavak: []
