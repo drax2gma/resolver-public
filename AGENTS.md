@@ -70,8 +70,9 @@ mögötti auth esetén szabad kitenni.
   hash-ütközésnél 409-cel elutasít.
 - Reverse proxy mögött `PROTOCOL_HEADER=x-forwarded-proto` és a `Host` fejléc
   átadása kell a helyes originhez.
-- Ollama: `qwen3:1.7b` CPU-n is elfut; hideg hívás 40–65 s, meleg 5–15 s.
-  A kérés szinkron, nincs job-queue.
+- Ollama: az élő modell `qwen3.5:2b`; CPU-n új prompt ~50–70 s, cache-elt
+  ismétlés ~4 s. A `qwen3:1.7b` a gyorsabb alternatíva. A kérés szinkron,
+  nincs job-queue.
 
 ## Egyéb
 

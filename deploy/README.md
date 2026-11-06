@@ -55,7 +55,7 @@ DB_PATH=/var/lib/resolver/resolver.db
 
 MODEL_PROVIDER=ollama
 OLLAMA_URL=http://127.0.0.1:11434
-OLLAMA_MODEL=qwen3:1.7b
+OLLAMA_MODEL=qwen3.5:2b
 MODEL_TIMEOUT_MS=240000
 MODEL_NUM_CTX=4096
 MODEL_NUM_PREDICT=120
@@ -112,12 +112,14 @@ ollama nélkül is végigviszi a flow-t.
 
 ```bash
 # Telepítés az ollama dokumentációja szerint, majd:
-ollama pull qwen3:1.7b
+ollama pull qwen3.5:2b
 ```
 
 CPU-s systemd minta: `deploy/ollama.service`. A modell mérete és a
 `MODEL_NUM_CTX`/`MODEL_NUM_PREDICT` értékek a rendelkezésre álló RAM-hoz
-igazíthatók.
+igazíthatók. A pilot élő beállítása `qwen3.5:2b` (2,7 GB): új prompt ~50–70 s,
+cache-elt ismétlés ~4 s. Kisebb RAM-on vagy alacsonyabb latency-igénynél a
+`qwen3:1.7b` (1,4 GB) a gyorsabb alternatíva.
 
 ## 6. Backup
 

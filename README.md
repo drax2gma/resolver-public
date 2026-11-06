@@ -39,16 +39,17 @@ létrejön; seedelt példák nincsenek, a tudásbázis a visszajelzésekből ép
 
 ```bash
 ollama serve
-ollama pull qwen3:1.7b
+ollama pull qwen3.5:2b
 
 export MODEL_PROVIDER=ollama
 export OLLAMA_URL=http://127.0.0.1:11434
-export OLLAMA_MODEL=qwen3:1.7b
+export OLLAMA_MODEL=qwen3.5:2b
 npm run dev
 ```
 
-A válaszok `latencyMs` értéke a UI-ban látszik. 8 GB RAM-on az 1.7B Q4 a
-biztonságos kiindulás; nagyobb modell csak mérés után.
+A válaszok `latencyMs` értéke a UI-ban látszik. CPU-n a 2B új promptja
+~50–70 s, a cache-elt ismétlés ~4 s; 8 GB RAM-on a `qwen3:1.7b` a
+gyorsabb, biztonságosabb alternatíva.
 
 ## YAML router
 

@@ -51,7 +51,7 @@ export class OllamaProvider implements ModelProvider {
     numThread?: number;
   }) {
     this.url = options?.url ?? process.env.OLLAMA_URL ?? 'http://127.0.0.1:11434';
-    this.model = options?.model ?? process.env.OLLAMA_MODEL ?? 'qwen3:1.7b';
+    this.model = options?.model ?? process.env.OLLAMA_MODEL ?? 'qwen3.5:2b';
     this.timeoutMs = options?.timeoutMs ?? Number(process.env.MODEL_TIMEOUT_MS ?? 90_000);
     this.numCtx = options?.numCtx ?? Number(process.env.MODEL_NUM_CTX ?? 4096);
     this.numPredict = options?.numPredict ?? Number(process.env.MODEL_NUM_PREDICT ?? 120);
